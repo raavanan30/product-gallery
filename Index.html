@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="Style.css">
+    <title>Portfolio Gallery with Filtering</title>
+    <link rel="shortcut icon" href="Logo/LOGO.png">
+</head>
+<body>
+   <!-- MAIN (Center website) -->
+<div class="main">
+   
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')">all</button>
+      <button class="btn" onclick="filterSelection('SAMSUNG')">SAMSUNG</button>
+      <button class="btn" onclick="filterSelection('Iphone')">iphone</button>
+      <button class="btn" onclick="filterSelection('laptop')">laptop</button>
+      
+   </div>
+    </div>
+         
+    <!-- SAMSUNG -->
+    <div class="row">
+      <div class="column SAMSUNG">
+        <div class="content">
+            <a href="https://www.samsung.com/"target="_blank">
+            <img src="samsung_galaxy_s9.jpg"style="width:100%" 
+            onclick="SAMSUNG" class="hover-shadow cursor"></a>
+          <h4>SAMSUNG GALAXYS9</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <div class="column SAMSUNG">
+        <div class="content">
+            <a href="https://www.samsung.com/"target="_blank">
+            <img src="samsung_galaxy_s8.jpeg" style="width:100%" 
+            onclick="SAMSUNG" class="hover-shadow cursor"></a>
+          <h4>SAMSUNG GALAXYS8</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <div class="column SAMSUNG">
+        <div class="content">
+            <a href="https://www.samsung.com/"target="_blank">
+        <img src="samsung_galaxy_s7_edge.jpg" style="width:100%"
+            onclick="SAMSUNG" class="hover-shadow cursor"></a>
+          <h4>SAMSUNG GALAXY S7</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <!-- IPHONE -->
+      <div class="column Iphone">
+        <div class="content">
+          <img src="Iphone X.jpg" alt="IPHONE" style="width:100%"
+          onclick="IPHONE" class="hover-shadow cursor">
+          <h4>IPHONE X</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <div class="column Iphone">
+        <div class="content">
+        <img src="Iphone 8.jpg" alt="IPHONE" style="width:100%"
+        onclick="IPHONE" class="hover-shadow cursor">
+          <h4>IPHONE 8</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <div class="column Iphone">
+        <div class="content">
+        <img src="Iphone 7.jpg" alt="IPHONE" style="width:100%"
+        onclick="IPHONE" class="hover-shadow cursor">
+          <h4>IPHONE 7</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+
+      <!-- COMPUTER -->
+      <div class="column laptop">
+        <div class="content">
+          <img src="SAMSUNG.jpg" alt="COMPUTER" style="width:100%"
+          onclick="COMPUTER" class="hover-shadow cursor">
+          <h4>COMPUTER SAMSUNG</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+    
+      <div class="column laptop">
+        <div class="content">
+          <img src="MacBook.jpg" alt="COMPUTER" style="width:100%"
+          onclick="COMPUTER" class="hover-shadow cursor">
+          <h4>COMPUTER MacBook</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+
+      <div class="column laptop">
+        <div class="content">
+          <img src="Computer Dell.jpg" alt="COMPUTER" style="width:100%"
+          onclick="COMPUTER" class="hover-shadow cursor">
+          <h4>COMPUTER DELL</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+    
+      <div class="column laptop">
+        <div class="content">
+          <img src="Computer Aser.jpg" alt="COMPUTER" style="width:100%"
+          onclick="COMPUTER" class="hover-shadow cursor">
+          <h4>COMPUTER ASES</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <div class="column laptop">
+        <div class="content">
+        <img src="Computer Acer.jpg" alt="COMPUTER" style="width:100%"
+        onclick="COMPUTER" class="hover-shadow cursor">
+          <h4>COMPUTER ACER</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <div class="column laptop">
+        <div class="content">
+        <img src="Computer Dell.jpg" alt="COMPUTER" style="width:100%"
+        onclick="COMPUTER" class="hover-shadow cursor">
+          <h4>COMPUTER DELL</h4>
+          <button>Learn More</button>
+        </div>
+      </div>
+    <!-- END GRID -->
+    </div>
+    
+    <!-- END MAIN -->
+    </div>
+    
+    <script>
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("column");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+    
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+    
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+    
+    
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
+     </div> 
+    </div>       
+</body>
+</html>

@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Center website */
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 40px;
+    word-break: break-all;
+}
+
+.row {
+    margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color:white;
+    padding: 14px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #ddd;
+  color: #fd4800;
+
+  font-weight: bold;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.281),0 4px 30px  rgba(0, 0, 0, 0.219);
+}
+
+.btn.active {
+  background-color: #666;
+  font-weight: bold;
+  color: white;
+
+}
+.content button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 14px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50px;
+  }
+  
+  .content button:hover {
+    background-color:rgb(46, 44, 44);
+    color: white;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.281),0 4px 30px  rgba(0, 0, 0, 0.219);
+  }
+img.hover-shadow {
+  transition: 0.5s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384),0 4px 30px  rgba(0, 0, 0, 0.219);
+}
